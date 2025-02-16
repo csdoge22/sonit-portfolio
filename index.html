@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sonit Ambashta Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: #00033B;
+                text-wrap:initial;
+            }
+
+            .intro {
+                color: white;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .btn {
+                color: #02EEFF;
+                flex: 1 1 auto;
+                min-width: 120px;
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+                margin: auto;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+
+            .title {
+                color: white;
+                text-shadow: 2px 2px 5px blue;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 6vw;
+                text-align: center;
+            }
+
+            #home {
+                text-align: center;
+                font-size: 128px;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                color: teal;
+                margin: auto
+            }
+
+            .intro {
+                font-size: 4vw;
+                margin: auto;
+            }
+
+            .component{
+                width: 80%;
+                max-width: 2400px;
+                margin: auto;
+                background-color: #1D1F51;
+                border-radius: 30px;
+            }
+
+            .description {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 3vw;
+                color: white;
+                text-align: center;
+                margin: auto;
+            }
+
+            .subsec {
+                width: 80%;
+                max-width: 1200px;
+                padding: auto;
+                margin: auto;
+                font-size: 36px;
+                text-align: center;
+                color: white;
+            }
+
+            .edusubcomponentarray {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px; /* Adds spacing between items */
+            }
+
+            .edusubcomponent:hover{
+                background-color: #7679A9;
+            }
+
+            .edusubcomponent {
+                background-color: #34376A;
+                width: 100%;
+                max-width: 300px;
+                margin: auto;
+                border-radius: 30px;
+            }
+
+            .projsubcomponentarray {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .projsubcomponent:hover {
+                background-color: #7679A9;
+            }
+
+            .projsubcomponent {
+                align-self: center;
+                background-color: #34376A;
+                border-radius: 30px;
+                margin: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+                height: 300px;
+            }
+
+            .expsubcomponentarray {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .expsubcomponent:hover {
+                background-color: #7679A9;
+            }
+
+            .expsubcomponent {
+                align-self: center;
+                background-color: #34376A;
+                border-radius: 30px;
+                margin: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+                height: 300px;
+            }
+
+            .skillsubcomponentarray {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .skillsubcomponent:hover {
+                background-color: #7679A9;
+            }
+
+            .skillsubcomponent {
+                align-self: center;
+                background-color: #34376A;
+                border-radius: 30px;
+                margin: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+                height: 300px;
+            }
+
+            .edusubcomponent, .projsubcomponent, .expsubcomponent, .skillsubcomponent {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                width: auto; /* Instead of fixed 400px */
+                min-width: 200px; /* Prevents extreme shrinking */
+                max-width: 100%; /* Ensures responsiveness */
+                height: auto; /* Allows the height to grow */
+                word-wrap: break-word; /* Prevents overflow issues */
+            }
+
+            .subcomponent-text, .subcomponent-title {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                text-align: center;
+                color: white;
+            }
+
+            .litem {
+                color: white;
+                font-size: 24px;
+            }
+
+            .typew {
+                overflow: hidden; /* Ensures the content is not revealed until the animation */
+                border-right: .15em solid orange; /* The typwriter cursor */
+                text-wrap: wrap;
+                margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+                letter-spacing: .15em; /* Adjust as needed */
+                animation: 
+                    typing 3.5s steps(120, end),
+                    blink-caret .75s step-end infinite;
+            }
+              
+              /* The typing effect */
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+              
+              /* The typewriter cursor effect */
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: teal; }
+            }
+
+            @media (max-width: 768px) {
+                .title {
+                    font-size: 6vw;
+                }
+            
+                .description {
+                    font-size: 4vw;
+                }
+            
+                .intro {
+                    font-size: 5vw;
+                }
+            
+                .projsubcomponentarray, .edusubcomponentarray, .expsubcomponentarray, .skillsubcomponentarray {
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .title {
+                    font-size: 10vw;
+                }
+            
+                .description {
+                    font-size: 5vw;
+                }
+            
+                .intro {
+                    font-size: 6vw;
+                }
+            
+                .component {
+                    width: 95%;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav>
+            <a class="btn" href="#home"><b>Home</b></a>
+            <a class="btn" href="#education"><b>Education</b></a>
+            <a class="btn" href="#projects"><b>Projects</b></a>
+            <a class="btn" href="#experience"><b>Experience</b></a>
+            <a class="btn" href="#contact"><b>Contact</b></a>
+        </nav>
+        <p class="intro">Hello. My name is</p>
+        <h1 id="home" class="typew">Sonit Ambashta</h1>
+        <p class="description" style="margin-bottom: 300px">My interests lie in Agile Software Development, Deep Learning using 
+            Keras and TensorFlow, Backend Web Development using Django, and 
+            utilizing database services on the AWS cloud.</p>
+        <h1 id="education" class="title">Education</h1>
+        <div class="component">
+            <h2 class="title">The College of New Jersey</h2>
+            <p class="description">B.S. in Computer Science (Expected 2027), Minor in Mathematics </p>
+            <p class="subsec"><b>Coursework</b></p>
+            <div class="edusubcomponentarray">
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-427-natural-language-processing/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 427</b></p>
+                        <p class="subcomponent-text">Natural Language Processing</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-360-computer-networking/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 360</b></p>
+                        <p class="subcomponent-text">Computer Networking</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-335-analysis-of-algorithms/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 335</b></p>
+                        <p class="subcomponent-text">Analysis of Algorithms</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-325-computer-architecture/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 325</b></p>
+                        <p class="subcomponent-text">Computer Architecture</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-270-discrete-structures/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 270</b></p>
+                        <p class="subcomponent-text">Discrete Structures</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://computerscience.tcnj.edu/about-the-department/courses-offered/csc-360-computer-networking/" target="_blank">
+                        <p class="subcomponent-title"><b>CSC 230</b></p>
+                        <p class="subcomponent-text">Computer Science II: Data Structures</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://mathstat.tcnj.edu/wp-content/uploads/sites/200/2014/08/MAT-205.pdf" target="_blank">
+                        <p class="subcomponent-title"><b>MAT 205</b></p>
+                        <p class="subcomponent-text">Linear Algebra: Theory and Applications</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://mathstat.tcnj.edu/wp-content/uploads/sites/200/2011/06/MAT-200-Syllabus-July-2017.pdf" target="_blank">
+                        <p class="subcomponent-title"><b>MAT 200</b></p>
+                        <p class="subcomponent-text">Proof Writing Through Discrete Mathematics</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://mathstat.tcnj.edu/wp-content/uploads/sites/200/2020/09/MAT-128_Sept_2020.pdf" target="_blank">
+                        <p class="subcomponent-title"><b>MAT 128</b></p>
+                        <p class="subcomponent-text">Calculus B</p>
+                    </a>
+                </div>
+                <div class="edusubcomponent">
+                    <a href="https://mathstat.tcnj.edu/wp-content/uploads/sites/200/2011/06/MAT-127_March2017-1.pdf" target="_blank">
+                        <p class="subcomponent-title"><b>MAT 127</b></p>
+                        <p class="subcomponent-text">Calculus A</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="component">
+            <h1 id="projects" class="title">Projects</h1>
+            <div class="projsubcomponentarray">
+                <div class="projsubcomponent">
+                    <p class="subsec"><b>DiaTreat Xpress</b></p>
+                    <ul>
+                        <li class="litem">Full stack web application utilizing scikit-learn for predicting whether users have diabetes</li>
+                        <li class="litem">offers diabetes management and prevention techniques</li>
+                        <li class="litem">Integrated user functionality by incorporating a REST API</li>
+                    </ul>
+                </div>
+                <div class="projsubcomponent">
+                    <p class="subsec"><b>Best Buy Review Scraper</b></p>
+                    <ul>
+                        <li class="litem">Created a Python Script that retrieves the words of each rating</li>
+                        <li class="litem">Processed keywords for determining honest ratings using Natural Language Processing</li>
+                    </ul>
+                </div>
+                <div class="projsubcomponent">
+                    <p class="subsec"><b>Roman Integer Converter</b></p>
+                    <ul>
+                        <li class="litem">Static site whose purpose is to allow users to convert between Integer to Roman</li>
+                        <li class="litem">Website made using HTML, CSS, and JavaScript and deployed using Amazon S3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="component">
+            <h1 id="experience" class="title">Experience</h1>
+            <div class="expsubcomponentarray">
+                <div class="expsubcomponent">
+                    <a href="https://owd.tcnj.edu/~bloodgm1/" target="_blank">
+                        <p class="subsec"><b>The College of New Jersey</b></p>
+                        <p class="subcomponent-text">Machine Learning Model Researcher</p>
+                        <p class="subcomponent-text">Jan 2025 - Present</p>
+                    </a>
+                </div>
+                <div class="expsubcomponent">
+                    <a href="https://www.youtube.com/@SonitAmbashta" target="_blank">
+                        <p class="subsec"><b>The Coding Doge</b></p>
+                        <p class="subcomponent-text">Founder and Content Creator</p>
+                        <p class="subcomponent-text">Jun 2024 - Present</p>
+                    </a>
+                </div>
+                <div class="expsubcomponent">
+                    <a href="https://www.super30.org/" target="_blank">
+                        <p class="subsec"><b>Super 30</b></p>
+                        <p class="subcomponent-text">Freelance Software Developer</p>
+                        <p class="subcomponent-text">May 2024 - Jun 2024</p>
+                    </a>
+                </div>
+                <div class="expsubcomponent">
+                    <a href="https://owd.tcnj.edu/~acm/" target="_blank">
+                        <p class="subsec"><b>TCNJ Association for Computing Machinery</b></p>
+                        <p class="subcomponent-text">Webmaster</p>
+                        <p class="subcomponent-text">Apr 2024 - Present</p>
+                    </a>
+                </div>
+                <div class="expsubcomponent">
+                    <a href="https://www.instagram.com/tcnjkalyani/" target="_blank">
+                        <p class="subsec"><b>TCNJ Kalyani</b></p>
+                        <p class="subcomponent-text">Treasurer</p>
+                        <p class="subcomponent-text">Apr 2024 - Present</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="component">
+            <h1 id="skills" class="title">Skills</h1>
+            <div class="skillsubcomponentarray">
+                <div class="skillsubcomponent">
+                    <h1 class="subsec">Programming Languages</h1>
+                    <ul>
+                        <li class="litem">Python</li>
+                        <li class="litem">SQL</li>
+                        <li class="litem">Java</li>
+                        <li class="litem">C/C++</li>
+                        <li class="litem">ARMx84 Assembly</li>
+                        <li class="litem">JavaScript/TypeScript</li>
+                    </ul>
+                </div>
+                <div class="skillsubcomponent">
+                    <h1 class="subsec">Front-End Frameworks</h1>
+                    <ul>
+                        <li class="litem">Bootstrap</li>
+                        <li class="litem">Tailwind CSS</li>
+                        <li class="litem">React</li>
+                        <li class="litem">Astro</li>
+                    </ul>
+                </div>
+                <div class="skillsubcomponent">
+                    <h1 class="subsec">Software and Tools</h1>
+                    <ul>
+                        <li class="litem">Docker</li>
+                        <li class="litem">Kubernetes</li>
+                        <li class="litem">Git</li>
+                        <li class="litem">Amazon Web Services</li>
+                    </ul>
+                </div>
+                <div class="skillsubcomponent">
+                    <h1 class="subsec">Back-End Frameworks and Databases</h1>
+                    <ul>
+                        <li class="litem">Flask</li>
+                        <li class="litem">FastAPI</li>
+                        <li class="litem">MySQL</li>
+                        <li class="litem">MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skillsubcomponent">
+                    <h1 class="subsec">Data Analytics and Machine Learning</h1>
+                    <ul>
+                        <li class="litem">PyTorch</li>
+                        <li class="litem">scikit-learn</li>
+                        <li class="litem">Pandas</li>
+                        <li class="litem">Seaborn</li>
+                        <li class="litem">NumPy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
