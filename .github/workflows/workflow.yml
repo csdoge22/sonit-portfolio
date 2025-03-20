@@ -8,17 +8,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@master
       
-      - name: Check AWS CLI Version
-        run: aws --version
-      
-      - name: Install and Build
+      - name: Vertify static site directory
         run: |
-          npm install
-          npm run build
+          echo "Checking site directory contents:"
+          ls -l website
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
