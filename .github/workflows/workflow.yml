@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@master
-
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
-        
-      - name: Deply to S3
+      
+      - name: Check AWS CLI Version
+        run: aws --version
+      
+      - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
