@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       
-      - name: Vertify static site directory
+      - name: Verify static site directory
         run: |
           echo "Checking site directory contents:"
           ls -l website
