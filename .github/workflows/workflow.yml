@@ -12,11 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@master
-      
-      - name: Verify static site directory
-        run: |
-          echo "Checking site directory contents:"
-          ls -l website
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
