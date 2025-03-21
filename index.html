@@ -12,6 +12,7 @@
 
             .intro {
                 color: white;
+                text-decoration-style: dashed;
                 text-align: center;
                 font-family: Arial, Helvetica, sans-serif;
             }
@@ -55,8 +56,25 @@
             .intro {
                 font-size: 4vw;
                 margin: auto;
+                opacity: 0;
+                animation: fadeIn 2s forwards;
+            }
+            
+            .hidden-image {
+                display: flex;
+                margin: auto;
+                padding: 30px;
+                width: 1000px;
+                height: auto;
+                opacity: 0;
+                animation: fadeIn 2s 2s forwards;
             }
 
+            @keyframes fadeIn {
+                to {
+                  opacity: 1;
+                }
+            }
             .component{
                 width: 80%;
                 max-width: 2400px;
@@ -76,9 +94,10 @@
             .subsec {
                 width: 80%;
                 max-width: 1200px;
-                padding: auto;
+                padding-top: 30px;
                 margin: auto;
                 font-size: 36px;
+                font-family: Arial, Helvetica, sans-serif;
                 text-align: center;
                 color: white;
             }
@@ -86,7 +105,9 @@
             .edusubcomponentarray {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 20px; /* Adds spacing between items */
+                justify-content: center;
+                gap: 20px;
+                padding: 50px;
             }
 
             .edusubcomponent:hover{
@@ -97,6 +118,7 @@
                 background-color: #34376A;
                 width: 100%;
                 max-width: 300px;
+                padding: 30px;
                 margin: auto;
                 border-radius: 30px;
             }
@@ -104,6 +126,7 @@
             .projsubcomponentarray {
                 display: flex;
                 flex-wrap: wrap;
+                padding: 50px;
                 gap: 15px;
             }
 
@@ -124,6 +147,7 @@
             .expsubcomponentarray {
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: center;
                 gap: 15px;
             }
 
@@ -138,11 +162,13 @@
                 margin: auto;
                 margin-left: 10px;
                 margin-right: 10px;
+                margin-bottom: 50px;
                 height: 300px;
             }
 
             .skillsubcomponentarray {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
@@ -152,13 +178,16 @@
             }
 
             .skillsubcomponent {
+                display: flex;
                 align-self: center;
                 background-color: #34376A;
                 border-radius: 30px;
                 margin: auto;
                 margin-left: 10px;
                 margin-right: 10px;
+                margin-bottom: 50px;
                 height: 300px;
+                padding: 50px;
             }
 
             .edusubcomponent, .projsubcomponent, .expsubcomponent, .skillsubcomponent {
@@ -186,84 +215,29 @@
                 font-size: 24px;
             }
 
-            .typew {
-                overflow: hidden; /* Ensures the content is not revealed until the animation */
-                border-right: .15em solid orange; /* The typwriter cursor */
-                text-wrap: wrap;
-                margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-                letter-spacing: .15em; /* Adjust as needed */
-                animation: 
-                    typing 3.5s steps(120, end),
-                    blink-caret .75s step-end infinite;
-            }
-              
-              /* The typing effect */
-            @keyframes typing {
-                from { width: 0 }
-                to { width: 100% }
-            }
-              
-              /* The typewriter cursor effect */
-            @keyframes blink-caret {
-                from, to { border-color: transparent }
-                50% { border-color: teal; }
-            }
-
-            @media (max-width: 768px) {
-                .title {
-                    font-size: 6vw;
-                }
-            
-                .description {
-                    font-size: 4vw;
-                }
-            
-                .intro {
-                    font-size: 5vw;
-                }
-            
-                .projsubcomponentarray, .edusubcomponentarray, .expsubcomponentarray, .skillsubcomponentarray {
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .title {
-                    font-size: 10vw;
-                }
-            
-                .description {
-                    font-size: 5vw;
-                }
-            
-                .intro {
-                    font-size: 6vw;
-                }
-            
-                .component {
-                    width: 95%;
-                }
+            .foot {
+                color: white;
             }
             
         </style>
     </head>
     <body>
         <!-- Navbar -->
-        <nav>
+        <nav style="position: sticky;">
             <a class="btn" href="#home"><b>Home</b></a>
             <a class="btn" href="#education"><b>Education</b></a>
             <a class="btn" href="#projects"><b>Projects</b></a>
             <a class="btn" href="#experience"><b>Experience</b></a>
             <a class="btn" href="#contact"><b>Contact</b></a>
         </nav>
-        <p class="intro typew">Hello. My name is Sonit Ambashta</p>
-        <p class="description" style="margin-bottom: 1000px; margin-top: 500px">My interests lie in Agile Software Development, Deep Learning using 
+        <p class="intro" style="margin-top: 50px">Hello. My name is Sonit Ambashta</p>
+        <img src="Sonit_Picture.jpg" alt="Sonit Ambashta" class="hidden-image">
+        <p class="description" style="margin-top: 50px">My interests lie in Agile Software Development, Deep Learning using 
             PyTorch, Generative AI Transformers like GPT, Backend Web Development using Django, and 
             Database services on the AWS cloud.</p>
-        <h1 id="education" class="title">Education</h1>
         <div class="component">
-            <h2 class="title">The College of New Jersey</h2>
-            <p class="description">B.S. in Computer Science (Expected 2027), Minor in Mathematics </p>
+            <h2 class="title">Education</h2>
+            <p class="description">B.S. in Computer Science (Expected 2027), Minor in Mathematics at The College of New Jersey</p>
             <p class="subsec"><b>Coursework</b></p>
             <div class="edusubcomponentarray">
                 <div class="edusubcomponent">
@@ -332,7 +306,7 @@
             <h1 id="projects" class="title">Projects</h1>
             <div class="projsubcomponentarray">
                 <div class="projsubcomponent">
-                    <p class="subsec"><b>DiaTreat Xpress</b></p>
+                    <p class="subsec"><b>India Diabetes KMeans Clustering Model</b></p>
                     <ul>
                         <li class="litem">Full stack web application utilizing scikit-learn for predicting whether users have diabetes</li>
                         <li class="litem">offers diabetes management and prevention techniques</li>
@@ -405,17 +379,16 @@
                         <li class="litem">SQL</li>
                         <li class="litem">Java</li>
                         <li class="litem">C/C++</li>
-                        <li class="litem">ARMx84 Assembly</li>
                         <li class="litem">JavaScript/TypeScript</li>
                     </ul>
                 </div>
                 <div class="skillsubcomponent">
                     <h1 class="subsec">Front-End Frameworks</h1>
                     <ul>
-                        <li class="litem">Bootstrap</li>
+                        <li class="litem">Bootstrap CSS</li>
                         <li class="litem">Tailwind CSS</li>
-                        <li class="litem">React</li>
-                        <li class="litem">Astro</li>
+                        <li class="litem">React.js</li>
+                        <li class="litem">Astro.js</li>
                     </ul>
                 </div>
                 <div class="skillsubcomponent">
@@ -448,5 +421,12 @@
                 </div>
             </div>
         </div>
+        <footer class="nav">
+            <nav>
+                <a>LinkedIn</a>
+                <a>GitHub</a>
+                <a>YouTube</a>
+            </nav>
+        </footer>
     </body>
 </html>
