@@ -1,244 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Sonit Ambashta Portfolio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS -->
-        <style>
-            body {
-                background-color: #00033B;
-                text-wrap:initial;
-            }
+<head>
+    <title>Sonit Ambashta Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <style>
+        :root {
+            --primary-bg: #00033B;
+            --secondary-bg: #1D1F51;
+            --accent-bg: #34376A;
+            --hover-bg: #7679A9;
+            --primary-color: #02EEFF;
+            --text-color: #fff;
+            --title-shadow: 2px 2px 5px blue;
+            --border-radius: 30px;
+        }
 
-            .intro {
-                color: white;
-                text-decoration-style: dashed;
-                text-align: center;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        body {
+            background-color: var(--primary-bg);
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-            .btn {
-                color: #02EEFF;
-                flex: 1 1 auto;
-                min-width: 120px;
-                text-align: center;
-                font-size: 1.5rem;
-                padding: 1rem;
-                margin: auto;
-            }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            background: var(--primary-bg);
+            z-index: 10;
+        }
 
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            a {
-                text-decoration: none;
-            }
+        a {
+            text-decoration: none;
+        }
 
-            .title {
-                color: white;
-                text-shadow: 2px 2px 5px blue;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 6vw;
-                text-align: center;
-            }
+        .btn {
+            color: var(--primary-color);
+            min-width: 120px;
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+            margin: auto;
+        }
 
-            #home {
-                text-align: center;
-                font-size: 128px;
-                font-family:Georgia, 'Times New Roman', Times, serif;
-                color: teal;
-                margin: auto
-            }
+        .intro {
+            color: var(--text-color);
+            text-align: center;
+            font-size: 4vw;
+            margin: auto;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
 
-            .intro {
-                font-size: 4vw;
-                margin: auto;
-                opacity: 0;
-                animation: fadeIn 2s forwards;
-            }
-            
-            .hidden-image {
-                display: flex;
-                margin: auto;
-                justify-content: center;
-                width: 100%;
-                max-width: 300px;
-                padding: 30px;
+        .hidden-image {
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            width: 100%;
+            max-width: 300px;
+            padding: 30px;
+            opacity: 0;
+            animation: fadeIn 2s 2s forwards;
+        }
 
-                opacity: 0;
-                animation: fadeIn 2s 2s forwards;
-            }
+        .description {
+            font-size: 3vw;
+            color: var(--text-color);
+            text-align: center;
+            margin: auto;
+        }
 
-            @keyframes fadeIn {
-                to {
-                  opacity: 1;
-                }
-            }
-            .component{
-                width: 80%;
-                max-width: 2400px;
-                margin: auto;
-                background-color: #1D1F51;
-                border-radius: 30px;
-            }
+        .component {
+            width: 80%;
+            max-width: 2400px;
+            margin: auto;
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem 0;
+        }
 
-            .description {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 3vw;
-                color: white;
-                text-align: center;
-                margin: auto;
-            }
+        .title {
+            color: var(--text-color);
+            text-shadow: var(--title-shadow);
+            font-size: 6vw;
+            text-align: center;
+        }
 
-            .subsec {
-                width: 80%;
-                max-width: 1200px;
-                padding-top: 30px;
-                margin: auto;
-                font-size: 36px;
-                font-family: Arial, Helvetica, sans-serif;
-                text-align: center;
-                color: white;
-            }
+        .subsec {
+            width: 80%;
+            max-width: 1200px;
+            padding-top: 30px;
+            margin: auto;
+            font-size: 36px;
+            text-align: center;
+            color: var(--text-color);
+        }
 
-            .edusubcomponentarray {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
-                padding: 50px;
-            }
+        .edusubcomponentarray,
+        .projsubcomponentarray,
+        .expsubcomponentarray,
+        .skillsubcomponentarray {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px;
+        }
 
-            .edusubcomponent:hover{
-                background-color: #7679A9;
-            }
+        .projsubcomponentarray,
+        .expsubcomponentarray,
+        .skillsubcomponentarray {
+            gap: 15px;
+        }
 
-            .edusubcomponent {
-                background-color: #34376A;
-                width: 100%;
-                max-width: 300px;
-                padding: 30px;
-                margin: auto;
-                border-radius: 30px;
-            }
+        .edusubcomponent,
+        .projsubcomponent,
+        .expsubcomponent,
+        .skillsubcomponent {
+            background-color: var(--accent-bg);
+            border-radius: var(--border-radius);
+            margin: 10px auto 50px auto;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.3s;
+            min-width: 200px;
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            word-wrap: break-word;
+        }
 
-            .projsubcomponentarray {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 50px;
-                gap: 15px;
-            }
+        .projsubcomponent,
+        .expsubcomponent,
+        .skillsubcomponent {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
 
-            .projsubcomponent:hover {
-                background-color: #7679A9;
-            }
+        .projsubcomponent,
+        .expsubcomponent {
+            height: 300px;
+        }
 
-            .projsubcomponent {
-                align-self: center;
-                background-color: #34376A;
-                border-radius: 30px;
-                margin: auto;
-                margin-left: 10px;
-                margin-right: 10px;
-                height: 300px;
-            }
+        .skillsubcomponent {
+            padding: 50px;
+            height: 300px;
+        }
 
-            .expsubcomponentarray {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
+        .edusubcomponent:hover,
+        .projsubcomponent:hover,
+        .expsubcomponent:hover,
+        .skillsubcomponent:hover {
+            background-color: var(--hover-bg);
+        }
 
-            .expsubcomponent:hover {
-                background-color: #7679A9;
-            }
+        .subcomponent-title,
+        .subcomponent-text {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-align: center;
+            color: var(--text-color);
+        }
 
-            .expsubcomponent {
-                align-self: center;
-                background-color: #34376A;
-                border-radius: 30px;
-                margin: auto;
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 50px;
-                height: 300px;
-            }
+        .litem {
+            color: var(--text-color);
+            font-size: 24px;
+        }
 
-            .skillsubcomponentarray {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
+        .foot {
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+        }
 
-            .skillsubcomponent:hover {
-                background-color: #7679A9;
-            }
-
-            .skillsubcomponent {
-                display: flex;
-                align-self: center;
-                background-color: #34376A;
-                border-radius: 30px;
-                margin: auto;
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-bottom: 50px;
-                height: 300px;
-                padding: 50px;
-            }
-
-            .edusubcomponent, .projsubcomponent, .expsubcomponent, .skillsubcomponent {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 20px;
-                width: auto; /* Instead of fixed 400px */
-                min-width: 200px; /* Prevents extreme shrinking */
-                max-width: 100%; /* Ensures responsiveness */
-                height: auto; /* Allows the height to grow */
-                word-wrap: break-word; /* Prevents overflow issues */
-            }
-
-            .subcomponent-text, .subcomponent-title {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                text-align: center;
-                color: white;
-            }
-
-            .litem {
-                color: white;
-                font-size: 24px;
-            }
-
-            .foot {
-                color: white;
-            }
-            
-        </style>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav style="position: sticky;">
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
             <a class="btn" href="#home"><b>Home</b></a>
             <a class="btn" href="#education"><b>Education</b></a>
             <a class="btn" href="#projects"><b>Projects</b></a>
             <a class="btn" href="#experience"><b>Experience</b></a>
             <a class="btn" href="#skills"><b>Skills</b></a>
         </nav>
-        <p class="intro" style="margin-top: 50px">Hello. My name is Sonit Ambashta</p>
-        <img src="Sonit_Picture.jpg" alt="Sonit Ambashta" class="hidden-image">
-        <p class="description" style="margin-top: 50px">My interests lie in Agile Software Development, Deep Learning using 
-            PyTorch, Generative AI Transformers like GPT, Backend Web Development using Django, and 
-            Database services on the AWS cloud.</p>
-        <div class="component">
+    </header>
+    <main>
+        <section id="home">
+            <p class="intro" style="margin-top: 50px">Hello. My name is Sonit Ambashta</p>
+            <img src="Sonit_Picture.jpg" alt="Portrait of Sonit Ambashta" class="hidden-image">
+            <p class="description" style="margin-top: 50px">
+                My interests lie in Agile Software Development, Deep Learning using 
+                PyTorch, Generative AI Transformers like GPT, Backend Web Development using Django, and 
+                Database services on the AWS cloud.
+            </p>
+        </section>
+        <section class="component" id="education">
             <h2 class="title">Education</h2>
             <p class="description">B.S. in Computer Science (Expected 2027), Minor in Mathematics at The College of New Jersey</p>
             <p class="subsec"><b>Coursework</b></p>
@@ -304,9 +268,9 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="component">
-            <h1 id="projects" class="title">Projects</h1>
+        </section>
+        <section class="component" id="projects">
+            <h1 class="title">Projects</h1>
             <div class="projsubcomponentarray">
                 <div class="projsubcomponent">
                     <p class="subsec"><b>India Diabetes KMeans Clustering Model</b></p>
@@ -331,9 +295,9 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="component">
-            <h1 id="experience" class="title">Experience</h1>
+        </section>
+        <section class="component" id="experience">
+            <h1 class="title">Experience</h1>
             <div class="expsubcomponentarray">
                 <div class="expsubcomponent">
                     <a href="https://owd.tcnj.edu/~bloodgm1/" target="_blank">
@@ -371,9 +335,9 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="component">
-            <h1 id="skills" class="title">Skills</h1>
+        </section>
+        <section class="component" id="skills">
+            <h1 class="title">Skills</h1>
             <div class="skillsubcomponentarray">
                 <div class="skillsubcomponent">
                     <h1 class="subsec">Programming Languages</h1>
@@ -423,9 +387,10 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <footer>
-            <h1 style="color: white; display: flex; justify-content: center">© Sonit Ambashta, 2025</h1>
-        </footer>
-    </body>
+        </section>
+    </main>
+    <footer>
+        <h1 class="foot">© Sonit Ambashta, 2025</h1>
+    </footer>
+</body>
 </html>
