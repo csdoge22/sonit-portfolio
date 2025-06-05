@@ -20,6 +20,9 @@
         body {
             background-color: var(--primary-bg);
             font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         nav {
@@ -49,7 +52,7 @@
             color: var(--text-color);
             text-align: center;
             font-size: 4vw;
-            margin: auto;
+            margin: 50px auto 0 auto;
             opacity: 0;
             animation: fadeIn 2s forwards;
         }
@@ -69,7 +72,7 @@
             font-size: 3vw;
             color: var(--text-color);
             text-align: center;
-            margin: auto;
+            margin: 50px auto 0 auto;
         }
 
         .component {
@@ -79,6 +82,7 @@
             background-color: var(--secondary-bg);
             border-radius: var(--border-radius);
             padding: 2rem 0;
+            box-sizing: border-box;
         }
 
         .title {
@@ -96,6 +100,7 @@
             font-size: 36px;
             text-align: center;
             color: var(--text-color);
+            word-break: break-word;
         }
 
         .edusubcomponentarray,
@@ -107,6 +112,8 @@
             justify-content: center;
             gap: 20px;
             padding: 50px;
+            box-sizing: border-box;
+            width: 100%;
         }
 
         .projsubcomponentarray,
@@ -130,8 +137,23 @@
             min-width: 200px;
             max-width: 300px;
             width: 100%;
-            height: auto;
-            word-wrap: break-word;
+            height: 300px;
+            box-sizing: border-box;
+            overflow: hidden;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            position: relative;
+        }
+
+        .projsubcomponent ul,
+        .expsubcomponent ul,
+        .skillsubcomponent ul,
+        .edusubcomponent ul {
+            padding-left: 20px;
+            margin: 0;
+            width: 100%;
+            overflow-wrap: break-word;
+            word-break: break-word;
         }
 
         .projsubcomponent,
@@ -139,16 +161,11 @@
         .skillsubcomponent {
             margin-left: 10px;
             margin-right: 10px;
-        }
-
-        .projsubcomponent,
-        .expsubcomponent {
-            height: 300px;
+            overflow-y: auto;
         }
 
         .skillsubcomponent {
             padding: 50px;
-            height: 300px;
         }
 
         .edusubcomponent:hover,
@@ -159,26 +176,89 @@
         }
 
         .subcomponent-title,
-        .subcomponent-text {
-            word-wrap: break-word;
+        .subcomponent-text,
+        .litem {
             overflow-wrap: break-word;
+            word-break: break-word;
             text-align: center;
             color: var(--text-color);
         }
 
         .litem {
-            color: var(--text-color);
             font-size: 24px;
+            word-break: break-word;
         }
 
         .foot {
             color: var(--text-color);
             display: flex;
             justify-content: center;
+            margin: 0;
+            padding: 2rem 0 1rem 0;
         }
 
         @keyframes fadeIn {
             to { opacity: 1; }
+        }
+
+        @media (max-width: 900px) {
+            .component,
+            .subsec {
+                width: 98%;
+                font-size: 24px;
+            }
+            .edusubcomponentarray,
+            .projsubcomponentarray,
+            .expsubcomponentarray,
+            .skillsubcomponentarray {
+                padding: 10px;
+                gap: 10px;
+            }
+            .edusubcomponent,
+            .projsubcomponent,
+            .expsubcomponent,
+            .skillsubcomponent {
+                min-width: 150px;
+                max-width: 98vw;
+                padding: 15px 5px;
+                height: 250px;
+            }
+            .skillsubcomponent {
+                padding: 20px 5px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2rem;
+            }
+            .intro,
+            .description {
+                font-size: 1.2rem;
+            }
+            .subsec {
+                font-size: 1.1rem;
+            }
+            .litem {
+                font-size: 1rem;
+            }
+            .projsubcomponentarray,
+            .expsubcomponentarray,
+            .skillsubcomponentarray,
+            .edusubcomponentarray {
+                flex-direction: column;
+                align-items: center;
+            }
+            .edusubcomponent,
+            .projsubcomponent,
+            .expsubcomponent,
+            .skillsubcomponent {
+                min-width: 100px;
+                max-width: 98vw;
+                padding: 5px 2px;
+                height: 200px;
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
@@ -194,9 +274,9 @@
     </header>
     <main>
         <section id="home">
-            <p class="intro" style="margin-top: 50px">Hello. My name is Sonit Ambashta</p>
+            <p class="intro">Hello. My name is Sonit Ambashta</p>
             <img src="Sonit_Picture.jpg" alt="Portrait of Sonit Ambashta" class="hidden-image">
-            <p class="description" style="margin-top: 50px">
+            <p class="description">
                 My interests lie in Agile Software Development, Deep Learning using 
                 PyTorch, Generative AI Transformers like GPT, Backend Web Development using Django, and 
                 Database services on the AWS cloud.
@@ -276,7 +356,7 @@
                     <p class="subsec"><b>India Diabetes KMeans Clustering Model</b></p>
                     <ul>
                         <li class="litem">Full stack web application utilizing scikit-learn for predicting whether users have diabetes</li>
-                        <li class="litem">offers diabetes management and prevention techniques</li>
+                        <li class="litem">Offers diabetes management and prevention techniques</li>
                         <li class="litem">Integrated user functionality by incorporating a REST API</li>
                     </ul>
                 </div>
