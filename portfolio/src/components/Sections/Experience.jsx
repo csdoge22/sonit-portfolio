@@ -1,19 +1,19 @@
-import Section from '../UI/Section'
-import TimelineItem from '../UI/TimelineItem'
-import { experience } from '../../data/experience'
+import Section from '../UI/Section';
+import TimelineItem from '../UI/TimelineItem';
+import { experience } from '../../data/experience';
 
 export default function Experience() {
   return (
-    <Section 
-      id="experience" 
-      title="Experience" 
+    <Section
+      id="experience"
+      title="Experience"
       subtitle="Professional and research experiences that have shaped my technical and leadership abilities"
     >
-      <div className="bg-glass-bg border border-glass-border rounded-xl p-8 shadow-primary backdrop-blur-md">
+      <div className="rounded-xl border border-glass-border bg-glass-bg p-8 shadow-primary backdrop-blur-md">
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary transform -translate-x-1/2"></div>
-          
+          <div className="absolute bottom-0 left-1/2 top-0 hidden w-1 -translate-x-1/2 transform bg-gradient-to-b from-primary to-secondary md:block"></div>
+
           <div className="space-y-8">
             {experience.map((exp, index) => (
               <TimelineItem
@@ -29,5 +29,5 @@ export default function Experience() {
         </div>
       </div>
     </Section>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function LoadingScreen() {
   return (
@@ -7,19 +7,19 @@ export default function LoadingScreen() {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed inset-0 bg-dark-bg z-50 flex items-center justify-center"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-dark-bg"
       >
         <div className="text-center">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'spring', damping: 10 }}
-            className="font-space-grotesk text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-8"
+            className="mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text font-space-grotesk text-5xl font-bold text-transparent"
           >
             SA
           </motion.div>
-          
-          <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden mx-auto">
+
+          <div className="mx-auto h-1 w-48 overflow-hidden rounded-full bg-white/10">
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
@@ -30,5 +30,5 @@ export default function LoadingScreen() {
         </div>
       </motion.div>
     </AnimatePresence>
-  )
+  );
 }

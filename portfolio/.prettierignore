@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+reports
+reports/**
+public/build
+.playwright
+.vscode
+coverage
+.idea
+.DS_Store

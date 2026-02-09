@@ -4,10 +4,21 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "dev": "vite",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lhci": "lhci autorun --upload.target=filesystem --upload.outputPath=reports/lhci",
+    "lint": "npm-run-all format:check lint:eslint lint:style lint:md",
+    "lint:eslint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:eslint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "lint:md": "markdownlint '**/*.md'",
+    "lint:style": "stylelint \"src/**/*.css\"",
+    "lint:style:fix": "stylelint \"src/**/*.css\" --fix",
+    "prepare": "husky install",
+    "preview": "vite preview --port 5173",
+    "test:a11y": "node scripts/axe-scan.mjs",
+    "test:e2e": "playwright test --reporter=list"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -18,16 +29,34 @@
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@lhci/cli": "^0.15.1",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "axe-core": "^4.11.1",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "markdownlint-cli": "^0.47.0",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.58.2",
     "postcss": "^8.4.32",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^17.1.1",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^7.0.1",
     "tailwindcss": "^3.4.0",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "wait-on": "^9.0.3"
   }
 }

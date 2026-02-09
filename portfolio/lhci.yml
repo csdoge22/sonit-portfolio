@@ -1,0 +1,10 @@
+ci:
+  collect:
+    url: ['http://127.0.0.1:5173']
+    numberOfRuns: 1
+  assert:
+    assertions:
+      categories:performance: ['>=0.90']
+      categories:accessibility: ['>=0.90']
+      categories:best-practices: ['>=0.90']
+      categories:seo: ['>=0.90']

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { Link as ScrollLink } from 'react-scroll'
-import clsx from 'clsx'
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Link as ScrollLink } from 'react-scroll';
+import { clsx } from 'clsx';
 
 const navItems = [
   { id: 'home', label: 'Home' },
@@ -9,32 +9,34 @@ const navItems = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
-]
+];
 
 export default function Navbar({ activeSection }) {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={clsx(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-glass-border',
-        scrolled ? 'bg-dark-bg2/95 backdrop-blur-md shadow-primary h-16' : 'bg-[#0a0c2e]/92 backdrop-blur-md shadow-primary h-18'
+        'fixed left-0 top-0 z-50 w-full border-b border-glass-border transition-all duration-300',
+        scrolled
+          ? 'h-16 bg-dark-bg2/95 shadow-primary backdrop-blur-md'
+          : 'bg-[#0a0c2e]/92 h-18 shadow-primary backdrop-blur-md'
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-between items-center h-full">
+      <div className="mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-full items-center justify-between">
           <motion.div
-            className="font-space-grotesk font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            className="bg-gradient-to-r from-primary to-secondary bg-clip-text font-space-grotesk text-2xl font-bold text-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -42,7 +44,7 @@ export default function Navbar({ activeSection }) {
             Sonit Ambashta
           </motion.div>
 
-          <ul className="hidden md:flex items-center space-x-2">
+          <ul className="hidden items-center space-x-2 md:flex">
             {navItems.map((item) => (
               <motion.li
                 key={item.id}
@@ -57,9 +59,9 @@ export default function Navbar({ activeSection }) {
                   offset={-80}
                   duration={500}
                   className={clsx(
-                    'relative px-4 py-2 rounded-lg font-medium text-sm cursor-pointer transition-all',
+                    'relative cursor-pointer rounded-lg px-4 py-2 text-sm font-medium transition-all',
                     activeSection === item.id
-                      ? 'text-primary bg-primary/10 shadow-lg shadow-primary/20'
+                      ? 'bg-primary/10 text-primary shadow-lg shadow-primary/20'
                       : 'text-text-primary hover:text-primary'
                   )}
                 >
@@ -71,5 +73,5 @@ export default function Navbar({ activeSection }) {
         </div>
       </div>
     </motion.nav>
-  )
+  );
 }

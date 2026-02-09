@@ -1,38 +1,46 @@
-import { motion } from 'framer-motion'
-import TechTag from './TechTag'
+import { motion } from 'framer-motion';
 
-export default function ProjectCard({ title, description, technologies, link }) {
+import TechTag from './TechTag';
+
+export default function ProjectCard({
+  title,
+  description,
+  technologies,
+  link,
+}) {
   return (
     <motion.div
       whileHover={{ y: -10, scale: 1.02 }}
-      className="bg-[rgba(25,27,60,0.7)] border border-glass-border rounded-xl p-6 flex flex-col h-full transition-all duration-300 hover:border-primary/40 hover:shadow-secondary relative overflow-hidden group"
+      className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-glass-border bg-[rgba(25,27,60,0.7)] p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-secondary"
     >
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-      
-      <h3 className="font-space-grotesk text-2xl font-bold text-primary mb-4 group-hover:text-text-primary transition-colors">
+      <div className="absolute left-0 top-0 h-1 w-full scale-x-0 transform bg-gradient-to-r from-primary to-secondary transition-transform duration-300 group-hover:scale-x-100" />
+
+      <h3 className="mb-4 break-words font-space-grotesk text-2xl font-bold text-primary transition-colors group-hover:text-text-primary">
         {title}
       </h3>
-      
-      <p className="text-text-secondary mb-6 flex-grow leading-relaxed">
+
+      <p className="mb-6 flex-grow break-words leading-relaxed text-text-secondary">
         {description}
       </p>
-      
-      <div className="flex flex-wrap gap-2 mb-6">
+
+      <div className="mb-6 flex flex-wrap gap-2">
         {technologies.map((tech, index) => (
           <TechTag key={index}>{tech}</TechTag>
         ))}
       </div>
-      
+
       <motion.a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-primary font-medium inline-flex items-center gap-2 mt-auto group/link"
+        className="group/link mt-auto inline-flex items-center gap-2 font-medium text-primary"
         whileHover={{ x: 5 }}
       >
         View Project →
-        <span className="group-hover/link:translate-x-1 transition-transform">↗</span>
+        <span className="transition-transform group-hover/link:translate-x-1">
+          ↗
+        </span>
       </motion.a>
     </motion.div>
-  )
+  );
 }

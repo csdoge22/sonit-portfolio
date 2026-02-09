@@ -1,18 +1,29 @@
 export const skills = [
   {
-    category: "Languages",
-    items: ["Python", "Java", "JavaScript/TypeScript", "SQL", "C/C++", "HTML/CSS"]
+    category: 'Languages',
+    items: [
+      'Python',
+      'JavaScript',
+      'SQL',
+      'C/C++',
+    ],
   },
   {
-    category: "Frameworks",
-    items: ["React", "Spring Boot", "Flask", "Tailwind CSS", "Bootstrap", "JSP/Servlets"]
+    category: 'Frameworks',
+    items: [
+      'Vite',
+      'React.js',
+      'FastAPI',
+      'Tailwind CSS',
+      'Bootstrap',
+    ],
   },
   {
-    category: "AI/ML",
-    items: ["PyTorch", "HuggingFace", "scikit-learn", "NLP", "Pandas", "NumPy"]
+    category: 'AI/ML',
+    items: ['PyTorch', 'HuggingFace', 'scikit-learn', 'Transformers', 'Pandas', 'NumPy'],
   },
   {
-    category: "DevOps & Cloud",
-    items: ["AWS", "Docker", "Git", "CI/CD", "Linux", "REST APIs"]
-  }
-]
+    category: 'DevOps & Cloud',
+    items: ['AWS', 'Docker', 'Git', 'CI/CD', 'Linux', 'REST APIs'],
+  },
+];

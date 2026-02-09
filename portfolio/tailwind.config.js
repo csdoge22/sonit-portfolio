@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -26,19 +23,19 @@ export default {
           primary: '#ffffff',
           secondary: '#b2ebf2',
           tertiary: '#80deea',
-        }
+        },
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
       borderRadius: {
-        'xl': '24px',
-        'lg': '16px',
+        xl: '24px',
+        lg: '16px',
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'shine': 'shine 3s linear infinite',
+        float: 'float 6s ease-in-out infinite',
+        shine: 'shine 3s linear infinite',
       },
       keyframes: {
         float: {
@@ -46,15 +43,15 @@ export default {
           '50%': { transform: 'translateY(-15px)' },
         },
         shine: {
-          'to': { 'background-position': '200% center' },
+          to: { 'background-position': '200% center' },
         },
       },
       boxShadow: {
-        'primary': '0 8px 32px rgba(2, 238, 255, 0.25)',
-        'secondary': '0 4px 24px rgba(123, 97, 255, 0.2)',
-        'glow': '0 0 20px rgba(2, 238, 255, 0.4)',
+        primary: '0 8px 32px rgba(2, 238, 255, 0.25)',
+        secondary: '0 4px 24px rgba(123, 97, 255, 0.2)',
+        glow: '0 0 20px rgba(2, 238, 255, 0.4)',
       },
     },
   },
   plugins: [],
-}
+};

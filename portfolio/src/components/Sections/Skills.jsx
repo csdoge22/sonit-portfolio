@@ -1,18 +1,18 @@
-import Section from '../UI/Section'
-import SkillCategory from '../UI/SkillCategory'
-import { skills } from '../../data/skills'
+import Section from '../UI/Section';
+import SkillCategory from '../UI/SkillCategory';
+import { skills } from '../../data/skills';
 
 export default function Skills() {
   return (
-    <Section 
-      id="skills" 
-      title="Skills" 
+    <Section
+      id="skills"
+      title="Skills"
       subtitle="Technical proficiencies developed through academic projects, research, and professional experience"
     >
-      <div className="bg-glass-bg border border-glass-border rounded-xl p-8 shadow-primary backdrop-blur-md">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="rounded-xl border border-glass-border bg-glass-bg p-8 shadow-primary backdrop-blur-md">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {skills.map((category, index) => (
-            <SkillCategory 
+            <SkillCategory
               key={index}
               title={category.category}
               skills={category.items}
@@ -21,5 +21,5 @@ export default function Skills() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
