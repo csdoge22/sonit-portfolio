@@ -36,7 +36,7 @@ export default function Footer() {
             key="github"
             aria-label="GitHub profile"
             className="bg-white/8 flex h-12 w-12 items-center justify-center rounded-full border border-glass-border text-primary transition-all hover:bg-primary/15 hover:text-text-primary hover:shadow-glow"
-            href="https://github.com/yourusername"
+            href="https://github.com/csdoge22"
             initial={{ opacity: 0, scale: 0 }}
             rel="noopener noreferrer"
             target="_blank"
@@ -58,7 +58,7 @@ export default function Footer() {
             key="linkedin"
             aria-label="LinkedIn profile"
             className="bg-white/8 flex h-12 w-12 items-center justify-center rounded-full border border-glass-border text-primary transition-all hover:bg-primary/15 hover:text-text-primary hover:shadow-glow"
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/sonitambashta"
             initial={{ opacity: 0, scale: 0 }}
             rel="noopener noreferrer"
             target="_blank"
@@ -80,7 +80,7 @@ export default function Footer() {
             key="email"
             aria-label="Send email"
             className="bg-white/8 flex h-12 w-12 items-center justify-center rounded-full border border-glass-border text-primary transition-all hover:bg-primary/15 hover:text-text-primary hover:shadow-glow"
-            href="mailto:you@example.com"
+            href="sunnyambashta@gmail.com"
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, scale: 1 }}
